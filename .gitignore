@@ -26,7 +26,9 @@ cache/
 out/
 broadcast/*/31337/
 broadcast/**/dry-run/
-lib/
+# 注意：仅忽略 contracts/lib（forge install 的依赖），不要全局忽略 lib/
+# 不然会误伤前端的 app/lib/
+contracts/lib/
 
 # OS
 .DS_Store
