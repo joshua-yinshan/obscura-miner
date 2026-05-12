@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #000;
+  color: #00ff66;
+  font-family: "JetBrains Mono", Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+::selection {
+  background: #00ff66;
+  color: #000;
+}
+
+/* 终端式边框：左上角带 ┌ 字符的卡片 */
+.card {
+  position: relative;
+  border: 1px solid #006633;
+  padding: 1.25rem 1.25rem 1rem 1.25rem;
+  background: rgba(0, 30, 12, 0.15);
+}
+
+.card::before {
+  content: "┌";
+  position: absolute;
+  top: -0.75rem;
+  left: 0.5rem;
+  background: #000;
+  padding: 0 0.5rem;
+  color: #00ff66;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.card-title {
+  position: absolute;
+  top: -0.7rem;
+  left: 2rem;
+  background: #000;
+  padding: 0 0.5rem;
+  color: #00ff66;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* 虚线点点的"dot leader"行：左标签 右数字，中间用 . 填充 */
+.dot-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.dot-row > .label {
+  color: #80ffb3;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.dot-row > .dots {
+  flex: 1;
+  border-bottom: 1px dotted #006633;
+  position: relative;
+  top: -3px;
+}
+.dot-row > .value {
+  color: #00ff66;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ASCII 进度条 */
+.bar {
+  font-family: monospace;
+  white-space: pre;
+  color: #006633;
+}
+.bar .filled {
+  color: #00ff66;
+}
+.bar .filled-amber {
+  color: #ffb000;
+}
+
+/* 按钮 */
+.btn {
+  border: 1px solid #00ff66;
+  background: #00ff66;
+  color: #000;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.btn:hover {
+  background: #80ffb3;
+  border-color: #80ffb3;
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.btn-ghost {
+  background: transparent;
+  color: #00ff66;
+}
+.btn-ghost:hover {
+  background: #002211;
+  color: #80ffb3;
+}
+
+/* CRT 微闪烁 */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.97; }
+}
+.crt {
+  animation: flicker 4s linear infinite;
+}

@@ -1,0 +1,48 @@
+# 顶层兜底：任何子目录的 .env / 密钥 / 部署产物都不要进 git
+
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*-private.json
+
+# Node / pnpm
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Foundry
+cache/
+out/
+broadcast/*/31337/
+broadcast/**/dry-run/
+lib/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Temporary
+*.tmp
+*.bak
