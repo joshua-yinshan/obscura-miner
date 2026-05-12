@@ -10,3 +10,4 @@ out/
 # TypeScript incremental compile cache
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+pnpm-workspace.yaml
