@@ -69,10 +69,9 @@ jobs:
       - name: Install
         run: pnpm install --frozen-lockfile
 
-      - name: Typecheck
-        run: npx tsc --noEmit
-
-      - name: Build
+      # Next.js build 内部已经做了 typecheck（next build 失败 = TS 错），
+      # 所以不再单独跑 tsc。
+      - name: Build (includes typecheck)
         run: pnpm build
         env:
           NEXT_PUBLIC_CONTRACT_ADDRESS: "0x0000000000000000000000000000000000000000"
