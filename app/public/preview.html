@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Obscura — Social Preview Card</title>
+<style>
+  /* GitHub Social Preview 推荐尺寸 1280×640 */
+  html, body { margin: 0; padding: 0; background: #000; }
+  body {
+    width: 1280px;
+    height: 640px;
+    font-family: "JetBrains Mono", "Consolas", "Courier New", monospace;
+    color: #00ff66;
+    overflow: hidden;
+    position: relative;
+  }
+  .card {
+    position: relative;
+    width: 1180px;
+    height: 540px;
+    margin: 50px;
+    border: 2px solid #006633;
+    padding: 0 56px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card::before {
+    content: "┌";
+    position: absolute;
+    top: -28px;
+    left: 24px;
+    background: #000;
+    padding: 0 14px;
+    color: #00ff66;
+    font-size: 40px;
+    line-height: 1;
+  }
+  .card-title {
+    position: absolute;
+    top: -22px;
+    left: 64px;
+    background: #000;
+    padding: 0 14px;
+    color: #00ff66;
+    font-size: 18px;
+    letter-spacing: 0.2em;
+  }
+  .top {
+    padding-top: 40px;
+  }
+  .brand {
+    font-size: 92px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .tagline {
+    font-size: 26px;
+    color: #80ffb3;
+    letter-spacing: 0.1em;
+  }
+  .tagline .dim {
+    color: #006633;
+  }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px;
+    margin-top: 36px;
+  }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .stat .label {
+    font-size: 13px;
+    color: #80ffb3;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .stat .value {
+    font-size: 32px;
+    color: #00ff66;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 28px;
+  }
+  .bar-wrap .frame {
+    flex: 1;
+    height: 24px;
+    background: #001a08;
+    position: relative;
+    overflow: hidden;
+  }
+  .bar-wrap .fill {
+    height: 100%;
+    width: 9.5%;
+    background: #00ff66;
+  }
+  .bar-wrap .pct {
+    color: #00ff66;
+    font-size: 20px;
+    font-variant-numeric: tabular-nums;
+    min-width: 90px;
+    text-align: right;
+  }
+  .bar-wrap .bracket {
+    color: #006633;
+    font-size: 22px;
+  }
+  .bottom {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .bottom .left {
+    font-size: 16px;
+    color: #80ffb3;
+    line-height: 1.7;
+  }
+  .bottom .left .row { display: flex; gap: 12px; }
+  .bottom .left .row .dim { color: #006633; }
+  .bottom .right {
+    text-align: right;
+    color: #006633;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+  }
+  .bottom .right .acc {
+    color: #00ff66;
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+  /* CRT scanlines 装饰 */
+  body::after {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 3px,
+      rgba(0, 255, 102, 0.025) 3px,
+      rgba(0, 255, 102, 0.025) 4px
+    );
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <span class="card-title">$OBS · OBSCURA</span>
+
+  <div class="top">
+    <div class="brand">$OBS</div>
+    <div class="tagline">浏览器挖矿 <span class="dim">·</span> 后量子 <span class="dim">·</span> 公平 Launch</div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="label">TOTAL SUPPLY</span>
+        <span class="value">21,000,000</span>
+      </div>
+      <div class="stat">
+        <span class="label">TEAM / VC</span>
+        <span class="value">0 / 0</span>
+      </div>
+      <div class="stat">
+        <span class="label">ADMIN</span>
+        <span class="value">NONE</span>
+      </div>
+      <div class="stat">
+        <span class="label">TESTS</span>
+        <span class="value">12 / 12 ✓</span>
+      </div>
+    </div>
+
+    <div class="bar-wrap">
+      <span class="bracket">[</span>
+      <div class="frame"><div class="fill"></div></div>
+      <span class="bracket">]</span>
+      <span class="pct">挖矿中…</span>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="left">
+      <div class="row"><span class="dim">&gt;</span> keccak256(chainId ‖ contract ‖ <span style="color:#ffb000">miner</span> ‖ epoch)</div>
+      <div class="row"><span class="dim">&gt;</span> valid iff keccak256(challenge ‖ nonce) &lt; target</div>
+      <div class="row"><span class="dim">&gt;</span> github.com/joshua-yinshan/obscura-miner</div>
+    </div>
+    <div class="right">
+      EDUCATIONAL REPLICA OF<br/>
+      HASH256.ORG<br/>
+      <br/>
+      <span class="acc">@yinshanguancha</span><br/>
+      隐山观察
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -3,7 +3,10 @@
 > 用浏览器挖一个 ERC-20 代币，致敬 [hash256.org](https://hash256.org)。
 > 单合约 PoW 矿币 · 公平挖矿 · 无管理员 · 后量子叙事 · **完整可跑通**
 
-![MIT License](https://img.shields.io/badge/license-MIT-green) ![Solidity 0.8.24](https://img.shields.io/badge/solidity-0.8.24-blue) ![Tests 12/12](https://img.shields.io/badge/tests-12%2F12-brightgreen) ![Stress 98.1%](https://img.shields.io/badge/stress--test-98.1%25-brightgreen)
+[![tests](https://github.com/joshua-yinshan/obscura-miner/actions/workflows/test.yml/badge.svg)](https://github.com/joshua-yinshan/obscura-miner/actions/workflows/test.yml)
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![Solidity 0.8.24](https://img.shields.io/badge/solidity-0.8.24-blue)
+![Stress 98.1%](https://img.shields.io/badge/stress--test-98.1%25-brightgreen)
 
 ---
 
