@@ -8,8 +8,8 @@ import {
   useWaitForTransactionReceipt,
 } from "wagmi";
 import { formatEther } from "viem";
-import { ABI, CONTRACT_ADDRESS } from "@/lib/contract";
-import { activeChain } from "@/lib/wagmi";
+import { ABI, CONTRACT_ADDRESS } from "../lib/contract";
+import { activeChain } from "../lib/wagmi";
 import { OnboardingCard } from "./OnboardingCard";
 import { ConnectButton } from "./ConnectButton";
 
